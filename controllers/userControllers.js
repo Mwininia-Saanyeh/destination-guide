@@ -1,4 +1,4 @@
-const { restart } = require("nodemon")
+ const { restart } = require("nodemon")
 const User = require("../models/userSchema")
 const bcrypt = require("bcrypt")
 const {validate} = require ("../config/Validator")
