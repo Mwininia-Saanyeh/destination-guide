@@ -1,19 +1,14 @@
 const mongoose = require("mongoose")
-const { number } = require("yup")
 
 
-const destinationSchema =mongoose.Schema({
+
+const hotelSchema =mongoose.Schema({
      
     
-     institutions: {
+    hotelname: {
         type: String,
         required: true
      },
-     commercialproperties: {
-        type: String,
-        required: true
-     },
-    
      facilities: {
         type: Array,
         required: true,
@@ -27,19 +22,11 @@ const destinationSchema =mongoose.Schema({
         type: String,
         required: true
      },
-     ratings: {
-        type: String
+      services: {
+        type: String,
+        required: true
      },
-     
      address: {
-        gps: String,
-        box: String,
-     },
-     services: {
-        gps: String,
-        box: String,
-     },
-     prices: {
         gps: String,
         box: String,
      },
@@ -47,11 +34,15 @@ const destinationSchema =mongoose.Schema({
         phone: String,
         email: String,
     },
+    images:{
+      type: String,
+      required: true,
+    }
 
     }, {
        timestamps:true
     }
     )
 
-    const destination = mongoose.model("destinations", destinationSchema)
-    module.exports=destination
+    const Hotel = mongoose.model("hotels", hotelSchema)
+    module.exports=Hotel
