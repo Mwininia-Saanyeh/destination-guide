@@ -17,17 +17,18 @@ const addUser = async (req, res) => {
          email,
          password:hashedPassword,
       });
-      res.status(201).json({
-         success:true,
-         message: "user created",
-         savedUser,
-      });
-if(User){
+      // res.status(201).json({
+      //    success:true,
+      //    message: "user created",
+      //    savedUser,
+      // });
+if(savedUser){
    res.status(201).json({
-      username:User.username,
-      email:User.email,
-      id:User._id,
-      token: generateToken(User._id)
+      username:savedUser.username,
+      email:savedUser.email,
+      password:savedUser.password,
+      id:savedUser._id,
+      token: generateToken(savedUser._id)
    })
 }
 res.status(201).json({

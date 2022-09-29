@@ -5,6 +5,7 @@ const schoolRoute= require('./routes/schoolRoute')
 const hotelRoute= require('./routes/hotelRoute')
 const hospitalRoute= require('./routes/hospitalRoute')
 const eatryRoute= require('./routes/eatryRoute')
+const userRoute =require("./routes/userRoute")
 const commercialpropertiesRoute= require('./routes/commercialpropertiesRoute')
 const morgan = require('morgan')
 
@@ -14,7 +15,7 @@ connectDB();
 
 //middlewares
 app.use(express.json())
-// app.use("/api/users", userRoute)
+app.use("/api/users", userRoute)
 app.use("/api/myschool", schoolRoute)
 app.use("/api/hotel", hotelRoute)
 app.use("/api/hospital", hospitalRoute)

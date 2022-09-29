@@ -4,7 +4,6 @@ const Hotel = require('../models/hotelSchema');
 const createHotel = (req,res) => {
     const newHotel = new Hotel({
         hotelname:req.body.hotelname,
-        category: req.body.category,
         facilities: req.body.facilities,
         location: req.body.location,
         services: req.body.services,
